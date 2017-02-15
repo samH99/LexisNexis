@@ -12,7 +12,7 @@ class v(ast.NodeVisitor):
   def visit_ImportFrom(self,node):
 
         if len(node.names) == 1  and str(node.names[-1].name) == "*":
-             ## print ">>>>>>>>>>>>>>>>>>>>>>TRUE"
+              print ">>>>>>>>>>>>>>>>>>>>>>TRUE"
               try:library[node.module] += 1
               except: library[node.module] = 1
         else:
