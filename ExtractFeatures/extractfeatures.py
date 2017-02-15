@@ -12,7 +12,7 @@ class v(ast.NodeVisitor):
   def visit_ImportFrom(self,node):
 
         if len(node.names) == 1  and str(node.names[-1].name) == "*":
-              print ">>>>>>>>>>>>>>>>>>>>>>TRUE"
+             ## print ">>>>>>>>>>>>>>>>>>>>>>TRUE"
               try:library[node.module] += 1
               except: library[node.module] = 1
         else:
@@ -52,7 +52,7 @@ def movefiles(directory):
   path = get_filepaths("./"+directory) 
   path = [ x for x in path if x.endswith(".py")]
 
-  for p in path: 
+  for p in path:
     os.rename(p,"./"+directory+"/"+p.split('/')[-1])
   removedirectories(directory)
 
